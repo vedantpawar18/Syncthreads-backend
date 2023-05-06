@@ -1,10 +1,9 @@
 const {Router} = require("express")
 const {UserModel} = require("../models/User.model")
 const userController = Router();
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken"); 
+const bcrypt = require("bcrypt"); 
 require("dotenv").config();
-const {validateEmail,generateToken, decryptToken}= require("../utils/utils");
+const {validateEmail,generateToken }= require("../utils/utils");
 
 
 userController.post("/signup", async(req, res) => {

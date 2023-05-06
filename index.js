@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require('cors');   
 const {userController}= require("./routes/user.routes")
 const {dashboardController}= require("./routes/dashboard.routes")
+const {mapController}= require("./routes/map.routes")
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
  
 app.use("/user", userController);
 app.use("/dashboard", dashboardController);
+app.use("/map", mapController);
 
 app.get("/", (req, res) => {
   res.send("Welcome to homepage");

@@ -7,6 +7,7 @@ const citySchema = new mongoose.Schema({
     profileImgUrl:{type:String},
     latitude:{type:Number},
     longitude:{type:Number},
+    population:{type:Number},
     cityDescription:{type:String}
 })
 
