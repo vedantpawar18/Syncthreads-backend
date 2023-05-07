@@ -7,16 +7,16 @@ const validateEmail = (email) => {
     else return false;
   };
 
-const generateToken = ({ userId=null,email=null ,fullName=null,role=null  }) => {
+const generateToken = ({ userId=null,email=null ,fullName=null }) => {
     const primaryToken = jwt.sign(
-      {userId:userId, email: email, fullName:fullName, role:role  },
+      {userId:userId, email: email, fullName:fullName  },
       process.env.PRIMARY_SECRET_KEY,
       {
         expiresIn: "1h",
       }
     );
     const refreshToken = jwt.sign(
-      {userId:userId, email: email, fullName:fullName, role:role },
+      {userId:userId, email: email, fullName:fullName },
       process.env.REFRESH_SECRET_KEY,
       {
         expiresIn: "7days",
