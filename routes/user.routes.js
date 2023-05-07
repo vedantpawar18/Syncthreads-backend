@@ -11,7 +11,6 @@ userController.post("/signup", async(req, res) => {
 
     const alreadyUser = await UserModel.find({ email });
     const valideMail= validateEmail(email);
-    const role= "user"
 
     if(valideMail===false){
         return res.status(401).send("Invalid email address !");
